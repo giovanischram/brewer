@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.schram.brewer.config.controller.BeerController;
+import com.schram.brewer.controller.BeerController;
 
 @Configuration
 @ComponentScan(basePackageClasses = { BeerController.class })

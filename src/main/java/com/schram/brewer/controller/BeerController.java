@@ -1,4 +1,4 @@
-package com.schram.brewer.config.controller;
+package com.schram.brewer.controller;
 
 import org.springframework.stereotype.Controller;
 
