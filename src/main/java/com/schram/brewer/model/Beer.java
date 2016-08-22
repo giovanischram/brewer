@@ -1,9 +1,19 @@
 package com.schram.brewer.model;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Beer {
 
+	@NotBlank(message = "SKU é obrigatório")
 	private String sku;
+	
+	@NotBlank(message = "Nome é obrigatório")
 	private String name;
+
+	@Size(min = 1, max = 50, message = "O tamanho da descrição deve estar entre 1 e 50 carateres")
+	private String description;
 	
 	public String getSku() {
 		return sku;
@@ -20,4 +30,13 @@ public class Beer {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
 }
