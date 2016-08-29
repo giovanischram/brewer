@@ -18,7 +18,7 @@
 	<div class="container-fluid">
 		<div class="alert alert-danger alert-dismissible" role="alert">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<i class="fa  fa-exclamation-circle"></i> Já existe um produto com o nome informado.
+			<i class="fa  fa-exclamation-circle"></i> Já existe uma cerveja com o nome informado.
 		</div>
 	
 		<form method="POST" th:object="${beer}" class="form-vertical js-form-loading">
@@ -39,9 +39,16 @@
 			<div class="row">
 				<div class="col-sm-3 form-group">
 					<label for="style" class="control-label">Estilo</label>
-					<select id="style" class="form-control">
-						<option value="">Selecione o estilo</option>
-					</select>
+					<div class="bw-field-action">
+						<select id="style" class="form-control">
+							<option value="">Selecione o estilo</option>
+						</select>
+						<div class="bw-field-action__icon">
+							<a href="#" data-toggle="modal" data-target="#quickRegistrationStyleModal">
+								<i class="glyphicon glyphicon-plus-sign bw-glyphicon-large"></i>
+							</a>
+						</div>
+					</div>
 				</div>
 				<div class="col-sm-3 form-group">
 					<label for="flavor" class="control-label">Sabor</label>
@@ -95,6 +102,7 @@
 			</div>
 		</form>
 	</div>
+	<div th:replace="style/QuickRegistrationStyle :: modal"></div>
 </section>
 </body>
 </html>
