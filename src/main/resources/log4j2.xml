@@ -9,6 +9,8 @@
 	
 	<Loggers>
 		<Logger name="com.schram.brewer.controller" level="INFO"/>
+		
+		<Logger name="org.hibernate.SQL" level="DEBUG"/>
 	
 		<Root level="ERROR">
 			<AppenderRef ref="Console" />

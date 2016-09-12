@@ -2,7 +2,6 @@ package com.schram.brewer.model;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -28,9 +27,8 @@ public class Beer extends DefaultModel {
 	@Size(min = 1, max = 50, message = "O tamanho da descrição deve estar entre 1 e 50 carateres")
 	private String description;
 	
-	private BigDecimal value;
+	private BigDecimal amount;
 	
-	@Column(name = "alcoholic_content")
 	private BigDecimal alcoholicContent;
 
 	private BigDecimal commission;
@@ -71,12 +69,12 @@ public class Beer extends DefaultModel {
 		this.description = description;
 	}
 
-	public BigDecimal getValue() {
-		return value;
+	public BigDecimal getAmount() {
+		return amount;
 	}
 
-	public void setValue(BigDecimal value) {
-		this.value = value;
+	public void setAmount(BigDecimal amount) {
+		this.amount = amount;
 	}
 
 	public BigDecimal getAlcoholicContent() {
@@ -140,7 +138,7 @@ public class Beer extends DefaultModel {
 		result = prime * result + ((sku == null) ? 0 : sku.hashCode());
 		result = prime * result + ((stock == null) ? 0 : stock.hashCode());
 		result = prime * result + ((style == null) ? 0 : style.hashCode());
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
+		result = prime * result + ((amount == null) ? 0 : amount.hashCode());
 		return result;
 	}
 
@@ -192,10 +190,10 @@ public class Beer extends DefaultModel {
 				return false;
 		} else if (!style.equals(other.style))
 			return false;
-		if (value == null) {
-			if (other.value != null)
+		if (amount == null) {
+			if (other.amount != null)
 				return false;
-		} else if (!value.equals(other.value))
+		} else if (!amount.equals(other.amount))
 			return false;
 		return true;
 	}
