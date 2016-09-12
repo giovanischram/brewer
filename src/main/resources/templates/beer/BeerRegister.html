@@ -43,6 +43,7 @@
 					<div class="bw-field-action">
 						<select id="style" class="form-control">
 							<option value="">Selecione o estilo</option>
+							<option th:each="style : ${styles}" th:value="${style.id}" th:text="${style.name}"></option>
 						</select>
 						<div class="bw-field-action__icon">
 							<a href="#" data-toggle="modal" data-target="#quickRegistrationStyleModal">
@@ -55,6 +56,7 @@
 					<label for="flavor" class="control-label">Sabor</label>
 					<select id="flavor" class="form-control">
 						<option value="">Selecione o sabor</option>
+						<option th:each="flavor : ${flavors}" th:value="${flavor}" th:text="${flavor.description}"></option>
 					</select>
 				</div>
 				<div class="col-sm-3 form-group">
@@ -67,14 +69,12 @@
 				<div class="col-lg-3 col-sm-6 form-group">
 					<label for="origin" class="control-label">Origem</label>
 					<div>
-						<div class="radio radio-inline">
-							<input type="radio" name="origin">
-							<label>Nacional</label>
-						</div>
-						<div class="radio radio-inline">
-							<input type="radio" name="origin">
-							<label>Importada</label>
-						</div>
+						<th:block th:each="origin : ${origins}">
+							<div class="radio radio-inline">
+								<input th:id="|id_${origin}|" type="radio" th:value="${origin}" name="origin">
+								<label th:for="|id_${origin}|" th:text="${origin.description}"></label>
+							</div>
+						</th:block>
 					</div>
 				</div>
 			</div>
