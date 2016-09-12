@@ -18,7 +18,7 @@ CREATE TABLE `beer` (
     FOREIGN KEY (styleid) REFERENCES style(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO estilo VALUES (id, 'Amber Lager');
-INSERT INTO estilo VALUES (id, 'Dark Lager');
-INSERT INTO estilo VALUES (id, 'Pale Lager');
-INSERT INTO estilo VALUES (id, 'Pilsner');
+INSERT INTO style VALUES (id, 'Amber Lager');
+INSERT INTO style VALUES (id, 'Dark Lager');
+INSERT INTO style VALUES (id, 'Pale Lager');
+INSERT INTO style VALUES (id, 'Pilsner');
