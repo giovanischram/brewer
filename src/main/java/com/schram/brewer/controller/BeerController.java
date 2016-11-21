@@ -45,6 +45,7 @@ public class BeerController {
 		LOGGER.info(">>>>>>>> SKU: " + beer.getSku());
 		LOGGER.info(">>>>>>>> Name: " + beer.getName());
 		LOGGER.info(">>>>>>>> Description: " + beer.getDescription());
+		LOGGER.info(">>>>>>>> Style: " + beer.getStyle());
 		return new ModelAndView("redirect:/beers/new");
 	}
 }
